@@ -49,4 +49,13 @@ public class Serie {
         frases.forEach(e -> e.setSerie(this));
         this.frases = frases;
     }
+
+    @Override
+    public String toString() {
+        return "Serie{" +
+                "titulo='" + titulo + '\'' +
+                ", poster='" + poster + '\'' +
+                ", frases=" + frases.toString() +
+                '}';
+    }
 }

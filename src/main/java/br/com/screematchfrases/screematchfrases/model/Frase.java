@@ -16,6 +16,9 @@ public class Frase {
     private Serie serie;
 
 
+    public Frase(){
+
+    }
     public Frase( String autor, String frase) {
         this.autor = autor;
         this.frase = frase;
@@ -43,5 +46,14 @@ public class Frase {
 
     public void setSerie(Serie serie) {
         this.serie = serie;
+    }
+
+    @Override
+    public String toString() {
+        return "Frase{" +
+                "autor='" + autor + '\'' +
+                ", frase='" + frase + '\'' +
+                ", serie=" + serie.getTitulo() +
+                '}';
     }
 }

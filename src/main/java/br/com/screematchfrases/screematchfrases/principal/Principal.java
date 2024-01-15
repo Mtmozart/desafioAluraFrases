@@ -9,6 +9,7 @@ import br.com.screematchfrases.screematchfrases.service.ConverteDados;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class Principal {
@@ -35,12 +36,15 @@ public class Principal {
                                         
                     0 - Sair
                     """;
+            System.out.println(menu);
+            opcao = sc.nextInt();
+            sc.nextLine();
             switch (opcao) {
                 case 1:
-                    buscarSerie();
+                    buscarMidia();
                     break;
                 case 2:
-                    adicionarFraseSerie();
+                    adicionarFraseMidia();
                     break;
                 case 3:
                     listaSerie();
@@ -54,41 +58,52 @@ public class Principal {
         }
     }
 
-    private DadosSerie getDadosSerie() {
-        System.out.println("Digite o nome da série para busca");
+    private DadosSerie getDadosMidia() {
+        System.out.println("Digite o nome da série/filme para busca: ");
         var nomeSerie = sc.nextLine();
         var json = consumo.obterDados(ENDERECO + nomeSerie.replace(" ", "+") + API_KEY);
         DadosSerie dados = converte.obterDados(json, DadosSerie.class);
         return dados;
     }
 
-
-
-    private void buscarSerie() {
-        DadosSerie dados = getDadosSerie();
+    private void buscarMidia() {
+        DadosSerie dados = getDadosMidia();
         Serie serie = new Serie(dados.titulo(), dados.poster());
         repositorio.save(serie);
         System.out.println(dados);
     }
 
-    private Frase adicionarFraseSerie() {
+    private void adicionarFraseMidia() {
         listaSerie();
+        System.out.println("Escolha o filme da série");
+        String nomeMidia = sc.nextLine();
+        Optional<Serie> midia = repositorio.findByTituloContainingIgnoreCase(nomeMidia);
 
-        System.out.println("Digite quem disse a prase: ");
-        String autorFrase = sc.nextLine();
-        System.out.println("Digite a frase: ");
-        String fraseDita = sc.nextLine();
-        Frase frase = new Frase(autorFrase, fraseDita);
-        return frase;
+        if (midia.isPresent()) {
+            Serie serie = midia.get();
+            System.out.println("Digite quem disse a frase: ");
+            String autorFrase = sc.nextLine();
+            System.out.println("Digite a frase: ");
+            String fraseDita = sc.nextLine();
+            Frase frase = new Frase(autorFrase, fraseDita);
+            frase.setSerie(serie);
+            serie.getFrases().add(frase);
 
+            repositorio.save(serie);
+            System.out.println(serie.toString());
+
+        }
+        else {
+            System.out.println("Série não encontrada.");
+        }
     }
 
     private void listaSerie() {
         List<Serie> series = repositorio.findAll();
         series.stream()
-                .sorted(Comparator.comparing(Serie::getTitulo)).forEach(e -> System.out.println(e.getTitulo()));
-
+                .forEachOrdered(e -> System.out.println(e.getTitulo()));
     }
+
 
 
 }
