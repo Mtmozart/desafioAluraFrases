@@ -1,4 +1,4 @@
-package br.com.screematchfrases.screematchfrases;
+/*package br.com.screematchfrases.screematchfrases;
 
 import br.com.screematchfrases.screematchfrases.principal.Principal;
 import br.com.screematchfrases.screematchfrases.repository.SerieRepositorio;
@@ -8,11 +8,18 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ScreematchFrasesApplication {
-
-
+public class ScreematchFrasesApplicationSemWeb implements CommandLineRunner {
+	@Autowired
+	private SerieRepositorio repositorio;
 	public static void main(String[] args) {
-		SpringApplication.run(ScreematchFrasesApplication.class, args);
+		SpringApplication.run(ScreematchFrasesApplicationSemWeb.class, args);
 	}
 
-}
+
+
+	@Override
+	public void run(String... args) throws Exception {
+		Principal principal = new Principal(repositorio);
+		principal.exibirMenu();
+	}
+}*/
