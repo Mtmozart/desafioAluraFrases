@@ -1,5 +1,6 @@
 package br.com.screematchfrases.screematchfrases.controller;
 
+import br.com.screematchfrases.screematchfrases.dto.FraseDTO;
 import br.com.screematchfrases.screematchfrases.dto.SerieDTO;
 import br.com.screematchfrases.screematchfrases.model.Serie;
 import br.com.screematchfrases.screematchfrases.service.SerieService;
@@ -18,7 +19,7 @@ public class MidiasControllers {
     private SerieService service;
 
     @GetMapping("")
-    public List<SerieDTO> obterFrases(){
+    public List<FraseDTO> obterFrases(){
        return service.obterSerieAleatorias();
     }
 }

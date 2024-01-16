@@ -16,16 +16,10 @@ public class SerieService {
     private SerieRepositorio repositorio;
 
 
-    public List<SerieDTO> obterSerieAleatorias() {
+    public List<FraseDTO> obterSerieAleatorias() {
         return repositorio.frasesAleatorias().stream()
-                .map(s -> new SerieDTO(s.getId(), s.getTitulo(), s.getFrases()
-                        .stream()
-                        .map(f -> new FraseDTO(f.getAutor(),f.getFrase())
-                        ).collect(Collectors.toList())
-                ))
+                .map(f -> new FraseDTO(f.getAutor(), f.getFrase(), f.getSerie().getTitulo(), f.getSerie().getPoster())
+                )
                 .collect(Collectors.toList());
-                ;
-
-        ;
     }
 }
