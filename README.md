@@ -1,3 +1,22 @@
+
+# Sreenmatch-frases - desafio alura formação Java Web
+
+Projeto criado em função do desafio alura frases.
+
+| :placard: Vitrine.Dev |     |
+| -------------  | --- |
+| :sparkles: Nome        | **Titulo do meu projeto**
+| :label: Tecnologias | java, html, ruby, c# (tecnologias utilizadas)
+| :rocket: URL         | https://url-deploy.com.br
+| :fire: Desafio     | https://url-do-desafio.com.br
+
+<!-- Inserir imagem com a #vitrinedev ao final do link -->
+![](https://via.placeholder.com/1200x500.png?text=imagem+lindona+do+meu+projeto#vitrinedev)
+
+## Detalhes do projeto
+
+Textos e imagens que descrevam seu projeto, suas conquistas, seus desafios, próximos passos, etc...
+
 # Desafio Alura - Frases - Projeto com Spring Boot, JPA, PostgreSQL e MVC
 
 Este projeto é parte do Desafio Alura e foi desenvolvido utilizando tecnologias como Spring Boot, JPA (Java Persistence API), PostgreSQL como banco de dados e segue o padrão de projeto MVC (Model-View-Controller), além de aplicar o uso de DTOs (Data Transfer Objects) e outros pontos do Java.
