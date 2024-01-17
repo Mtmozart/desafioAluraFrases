@@ -5,13 +5,13 @@ Projeto criado em função do desafio alura frases.
 
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
-| :sparkles: Nome        | **Titulo do meu projeto**
-| :label: Tecnologias | java, html, ruby, c# (tecnologias utilizadas)
-| :rocket: URL         | https://url-deploy.com.br
+| :sparkles: Nome        | **Frases**
+| :label: Tecnologias | java, Spring boot(tecnologias utilizadas)
+| :rocket: URL         | https://github.com/Mtmozart/desafioAluraFrases
 | :fire: Desafio     | https://url-do-desafio.com.br
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
-![](https://via.placeholder.com/1200x500.png?text=imagem+lindona+do+meu+projeto#vitrinedev)
+![](https://media.discordapp.net/attachments/467195714745663498/1197235681190228129/spring-boot.jpeg?ex=65ba879d&is=65a8129d&hm=85900a3656bbac99e32bd92970c3d28e462fb470bdedecafb2bdbb379f3d674d&=&format=webp#vitrinedev)
 
 ## Detalhes do projeto
 
