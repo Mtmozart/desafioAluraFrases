@@ -3,7 +3,7 @@
 
 Projeto criado em função do desafio alura frases.
 
-| :placard: Vitrine.Dev |     |
+| :placard: Vitrine.Dev |  Desafio ALura - Spring BOot   |
 | -------------  | --- |
 | :sparkles: Nome        | **Frases**
 | :label: Tecnologias | java, Spring boot(tecnologias utilizadas)
